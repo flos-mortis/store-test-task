@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.shopping-cart__table, .shopping-cart__total {
+    margin-top: 1rem;
+}
+
+.shopping-cart__button {
+    margin: 0.125rem 0.625rem;
+    padding: 0.75rem 2rem;
+}
+
+.shopping-cart__span {
+    color: $accent-color;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.cell {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid $primary-color;
+    text-align: center;
+}

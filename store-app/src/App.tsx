@@ -1,31 +1,27 @@
 import '../src/styles/App.scss';
 import Header from './components/header/Header';
-import ProductCard from './components/product-card/ProductCard';
-import { Counter } from './features/cart/Counter';
+import Catalog from './components/catalog/Catalog';
+import ShoppingCart from './components/shopping-cart/ShoppingCart';
 
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Counter />
-      <Header></Header>
-      <div className="container">
-        <main className="main-page">
-          <h3 className="heading">Каталог товаров</h3>
-          <div className="products">
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard> 
-          </div>
-        </main>
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/catalog" element={<Catalog />}/>
+          <Route path="/" element={<Catalog />}/>
+          <Route path="/cart" element={<ShoppingCart />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
